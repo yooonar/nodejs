@@ -7,7 +7,7 @@ const router = express.Router();
 const ctrl = require("./home.ctrl");
 
 // 메인 페이지
-router.get("/", ctrl.hello);
+router.get("/", ctrl.home);
 
 // 로그인 페이지
 router.get("/login", ctrl.login);

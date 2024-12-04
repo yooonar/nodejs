@@ -1,7 +1,7 @@
 "use strict";
 
 // 메인 페이지
-const hello = (req, res) => {
+const home = (req, res) => {
     res.render("home/index");
 };
 
@@ -11,6 +11,6 @@ const login = (req, res) => {
 };
 
 module.exports = {
-    hello,
+    home,
     login,
 };
