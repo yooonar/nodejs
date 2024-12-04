@@ -15,6 +15,11 @@ const app = express();
 // 라우팅
 const home = require("./src/routes/home");
 
+// winston 로거(www.js로 옮김)
+// const logger = require("./src/config/logger");
+// logger.error("hello!!"); // logger.log("info", "hello!");
+
+// morgan 로그 관련 설정
 const accessLogStream = require("./src/config/log");
 
 // 앱 세팅
