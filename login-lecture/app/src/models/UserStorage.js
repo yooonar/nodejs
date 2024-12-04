@@ -32,6 +32,15 @@ class UserStorage {
 
         return userInfo;
     }
+
+    // 회원 가입
+    static save(userInfo) {
+        const users = this.#users;
+        users.id.push(userInfo.id);
+        users.name.push(userInfo.name);
+        users.psword.push(userInfo.psword);
+        return { success: true };
+    }
 }
 
 module.exports = UserStorage;
