@@ -19,6 +19,19 @@ class UserStorage {
         }, {}); // {}: object 에 넣기
         return newUsers;
     }
+
+    // 아이디에 해당하는 데이터 가져오기
+    static getUserInfo(id) {
+        const users = this.#users;
+        const idx = users.id.indexOf(id); // 아이디의 인덱스
+        const usersKeys = Object.keys(users); // [id, psword, name] // users의 키 값들만 모아놓은 리스트
+        const userInfo = usersKeys.reduce((newUser, info) => {
+            newUser[info] = users[info][idx];
+            return newUser;
+        }, {});
+
+        return userInfo;
+    }
 }
 
 module.exports = UserStorage;

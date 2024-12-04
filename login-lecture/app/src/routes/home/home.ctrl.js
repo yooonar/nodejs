@@ -1,6 +1,7 @@
 "use strict";
 
-const UserStorage = require("../../models/UserStorage");
+// const UserStorage = require("../../models/UserStorage");
+const User = require("../../models/User");
 
 // GET
 const output = {
@@ -18,24 +19,8 @@ const output = {
 // POST
 const process = {
     login: (req, res) => {
-        const id = req.body.id,
-            psword = req.body.psword;
-
-        // const userStorage = new UserStorage(); // 굳이 생성하지 않아도 될듯?
-        // console.log(UserStorage.users);
-        const users = UserStorage.getUsers("id", "psword");
-        const responseData = {}; // 응답 객체
-
-        if(users.id.includes(id)) {
-            const idx = users.id.indexOf(id);
-            if(users.psword[idx] === psword) {
-                responseData.success = true;
-                return res.json(responseData);
-            }
-        }
-
-        responseData.success = false;
-        responseData.msg = "로그인 실패!";
+        const user = new User(req.body); // 클라이언트에서 받은 request data인 req.body를 넘겨줌
+        const responseData = user.login(); // 로그인 체크
         return res.json(responseData);
     },
 };
