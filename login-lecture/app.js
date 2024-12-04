@@ -3,12 +3,35 @@ const app = express();
 
 // 메인 페이지
 app.get("/", (req, res) => {
-    res.send("루트 페이지");
+    res.send(`<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    여기는 루트 페이지입니다.
+</body>
+</html>`);
 });
 
 // 로그인 페이지
 app.get("/login", (req, res) => {
-    res.send("로그인 화면");
+    res.send(`<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="아이디"><br>
+    <input type="text" placeholder="비밀번호"><br>
+    <button>로그인</button>
+</body>
+</html>
+`);
 });
 
 app.listen(3000, () => {
