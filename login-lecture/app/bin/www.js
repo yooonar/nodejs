@@ -2,7 +2,7 @@
 
 const app = require("../app");
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // app.listen 모듈화
 app.listen(PORT, () => {

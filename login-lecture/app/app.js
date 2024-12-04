@@ -3,6 +3,11 @@
 // 모듈
 const express = require("express");
 const bodyParser = require("body-parser");
+
+// 환경변수 모듈 (.env 파일)
+const dotenv = require("dotenv");
+dotenv.config();
+
 const app = express();
 
 // 라우팅
