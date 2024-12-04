@@ -14,7 +14,7 @@ const output = {
 const users = {
     id: ["test", "테스트", "테스터"],
     psword: ["11", "1111", "1234"],
-}
+};
 
 // POST
 const process = {
