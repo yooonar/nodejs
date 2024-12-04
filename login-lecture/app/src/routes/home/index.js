@@ -7,10 +7,11 @@ const router = express.Router();
 const ctrl = require("./home.ctrl");
 
 // 메인 페이지
-router.get("/", ctrl.home);
+router.get("/", ctrl.output.home);
 
 // 로그인 페이지
-router.get("/login", ctrl.login);
+router.get("/login", ctrl.output.login);
+router.post("/login", ctrl.process.login);
 
 // 외부에서 사용 가능하도록 설정
 module.exports = router;
