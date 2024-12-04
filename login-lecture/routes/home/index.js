@@ -3,6 +3,7 @@
 const express = require("express");
 const router = express.Router();
 
+// 컨트롤러 연결
 const ctrl = require("./home.ctrl");
 
 // 메인 페이지
