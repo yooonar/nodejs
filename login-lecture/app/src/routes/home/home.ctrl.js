@@ -23,9 +23,9 @@ const process = {
         const responseData = await user.login(); // 로그인 체크
         return res.json(responseData);
     },
-    register: (req, res) => {
+    register: async (req, res) => {
         const user = new User(req.body);
-        const responseData = user.register(); // 클라이언트에서 받은 request data인 req.body를 넘겨줌
+        const responseData = await user.register(); // 클라이언트에서 받은 request data인 req.body를 넘겨줌
         return res.json(responseData); // 회원가입 체크
     }
 };

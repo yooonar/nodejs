@@ -26,10 +26,14 @@ class User {
     }
 
     // 회원가입 메소드
-    register() {
+    async register() {
         const client = this.body;
-        const responseData = UserStorage.save(client); // 받은 값 그대로 넘겨주기
-        return responseData;
+        try {
+            const responseData = await UserStorage.save(client); // 받은 값 그대로 넘겨주기
+            return responseData;
+        } catch (err) {
+            return { success: false, msg: err };
+        }
     }
 }
 
