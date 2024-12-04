@@ -11,6 +11,9 @@ const output = {
     login: (req, res) => { // 로그인 페이지
         res.render("home/login");
     },
+    register: (req, res) => { // 회원가입 페이지
+        res.render("home/register");
+    },
 };
 
 // 임시 회원 데이터

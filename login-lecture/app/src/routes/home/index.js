@@ -13,5 +13,8 @@ router.get("/", ctrl.output.home);
 router.get("/login", ctrl.output.login);
 router.post("/login", ctrl.process.login);
 
+// 회원가입 페이지
+router.get("/register", ctrl.output.register);
+
 // 외부에서 사용 가능하도록 설정
 module.exports = router;
