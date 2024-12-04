@@ -3,7 +3,7 @@
 // DOM (Document Object Model) 인터페이스
 const id = document.querySelector("#id");
 const psword = document.querySelector("#psword");
-const loginBtn = document.querySelector("button");
+const loginBtn = document.querySelector("#loginButton");
 
 loginBtn.addEventListener("click", login);
 
