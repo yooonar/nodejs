@@ -11,6 +11,8 @@ const home = require("./src/routes/home");
 app.set("views", "./src/views");
 app.set("view engine", "ejs"); // 뷰 엔진
 
+// 현재디렉토리/src/public 을 정적 경로로 추가
+app.use(express.static(`${__dirname}/src/public`));
 
 app.use("/", home); // use: 미들웨어 등록해주는 메소드
 
