@@ -9,7 +9,6 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const morgan = require("morgan");
-const fs = require("fs");
 
 const app = express();
 
