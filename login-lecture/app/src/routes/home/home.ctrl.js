@@ -1,5 +1,7 @@
 "use strict";
 
+const { response } = require("../../../app");
+
 // GET
 const output = {
     home: (req, res) => { // 메인 페이지
@@ -21,19 +23,17 @@ const process = {
     login: (req, res) => {
         const id = req.body.id,
             psword = req.body.psword;
-        console.log(id, psword);
+        const responseData = {}; // 응답 객체
         if(users.id.includes(id)) {
             const idx = users.id.indexOf(id);
             if(users.psword[idx] === psword) {
-                return res.json({
-                    success: true,
-                });
+                responseData.success = true;
+                return res.json(responseData);
             }
         }
-        return res.json({
-            success: false,
-            msg: "로그인 실패",
-        });
+        responseData.success = false;
+        responseData.msg = "로그인 실패!";
+        return res.json(responseData);
     },
 };
 
