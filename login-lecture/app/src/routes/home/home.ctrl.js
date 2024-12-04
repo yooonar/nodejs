@@ -18,9 +18,9 @@ const output = {
 
 // POST
 const process = {
-    login: (req, res) => {
+    login: async (req, res) => {
         const user = new User(req.body); // 클라이언트에서 받은 request data인 req.body를 넘겨줌
-        const responseData = user.login(); // 로그인 체크
+        const responseData = await user.login(); // 로그인 체크
         return res.json(responseData);
     },
     register: (req, res) => {
