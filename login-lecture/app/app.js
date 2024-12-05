@@ -8,8 +8,8 @@ const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
 dotenv.config();
 
-const morgan = require("morgan");
-const logger = require("./src/config/logger");
+// const morgan = require("morgan");
+// const logger = require("./src/config/logger");
 
 const app = express();
 
@@ -36,7 +36,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // winston + morgan
-app.use(morgan("tiny", { stream: logger.stream }))
+// app.use(morgan("tiny", { stream: logger.stream }))
 
 // morgan
 // app.use(morgan("common", { stream: accessLogStream })); // GET /login 304 7.130 ms - -
