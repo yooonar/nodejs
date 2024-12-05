@@ -7,7 +7,7 @@ class UserStorage {
     // 아이디에 해당하는 데이터 가져오기
     static getUserInfo(id) {
         return new Promise((resolve, reject) => {
-            const query = "SELECT * FROM ussdfers WHERE id = ?;";
+            const query = "SELECT * FROM users WHERE id = ?;";
             db.query(query, [id], (err, data) => {
                 if (err) reject(`${err}`); // 실패
                 else resolve(data[0]); // 성공
