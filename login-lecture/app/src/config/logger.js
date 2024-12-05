@@ -58,4 +58,8 @@ if(process.env.NODE_ENV !== "production") { // 서비스 중이 아니면(NODE_E
     )
 }
 
+logger.stream = {
+    write: ( message ) => logger.info(message),
+};
+
 module.exports = logger;

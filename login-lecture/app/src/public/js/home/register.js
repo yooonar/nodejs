@@ -33,6 +33,7 @@ function register() {
         if(res.success) {
             location.href = "/login"; // 회원가입 성공 시 로그인 화면 이동
         } else {
+            if(res.err) return alert(res.err);
             alert(res.msg);
         }
     })

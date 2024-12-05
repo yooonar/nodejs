@@ -9,8 +9,8 @@ class UserStorage {
         return new Promise((resolve, reject) => {
             const query = "SELECT * FROM users WHERE id = ?;";
             db.query(query, [id], (err, data) => {
-                if (err) reject(err); // 실패
-                resolve(data[0]); // 성공
+                if (err) reject(`${err}`); // 실패
+                else resolve(data[0]); // 성공
             });
         });
     }
@@ -24,7 +24,7 @@ class UserStorage {
                 [userInfo.id, userInfo.name, userInfo.psword], 
                 (err) => {
                     if (err) reject(`${err}`); // 실패
-                    resolve( { success: true }); // 성공
+                    else resolve( { success: true } ); // 성공
             });
         });
     }

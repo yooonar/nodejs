@@ -9,6 +9,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const morgan = require("morgan");
+const logger = require("./src/config/logger");
 
 const app = express();
 
@@ -34,8 +35,11 @@ app.use(bodyParser.json());
 // url을 통해 전달되는 데이터에 한글, 공백 등과 같은 문자가 포함될 경우 제대로 인식되지 않는 문제를 해결해준다.
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// winston + morgan
+app.use(morgan("tiny", { stream: logger.stream }))
+
 // morgan
-app.use(morgan("common", { stream: accessLogStream })); // GET /login 304 7.130 ms - -
+// app.use(morgan("common", { stream: accessLogStream })); // GET /login 304 7.130 ms - -
 // app.use(morgan("dev", { stream: accessLogStream })); // GET /login 304 7.130 ms - -
 // app.use(morgan("tiny")); // GET /login 200 832 - 9.814 ms
 // app.use(morgan(":method :url :status :res[content-length] - :response-time ms")); // GET /login 304 - - 5.320 ms
